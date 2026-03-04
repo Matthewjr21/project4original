@@ -49,6 +49,32 @@ header {
   list-style: none;
   display: flex;
   margin-left: auto;
+  padding: 0;
+}
+
+#Nav-Links li {
+  display: inline-block;
+}
+
+#Nav-Links li a {
+  color: white;
+  padding: 20px 24px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  letter-spacing: 1px;
+}
+
+#Nav-Links li:last-child a {
+  border-right: none;
+}
+
+#Nav-Links li a:hover,
+#Nav-Links li a:focus {
+  background-color: #8C5E3C;
+  color: #FFD700;
+}
 }
 
 #Nav-Links li a {

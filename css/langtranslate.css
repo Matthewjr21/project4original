@@ -1,3 +1,27 @@
+/* Learn Boxes Section */
+.learn-boxes-section {
+  max-width: 900px;
+  margin: 40px auto 60px auto;
+  padding: 0 20px;
+}
+.learn-box {
+  background: #fff;
+  border-left: 6px solid #8C5E3C;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  margin-bottom: 28px;
+  padding: 24px 28px;
+}
+.learn-box h3 {
+  margin-top: 0;
+  color: #8C5E3C;
+  margin-bottom: 10px;
+}
+.learn-box p {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
 .titlecontainer .titleimage {
   filter: brightness(75%);
 }

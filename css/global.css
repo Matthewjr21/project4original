@@ -1,3 +1,22 @@
+/* Sticky footer for stories.html */
+.sticky-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #5C3A1B;
+  color: #fff;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 60px; /* Height of the footer */
+}
 /* BASE STYLES */
 
 * {

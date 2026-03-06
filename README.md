@@ -10,3 +10,6 @@ Research and Treaty pdf's uploaded
 
 Dev Log: 02/27
 2 hours of frontend development, styled pages and added features to treaties.
+
+Updated github to vercel domain. new project domain
+https://project4backup.vercel.app

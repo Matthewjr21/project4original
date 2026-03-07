@@ -24,6 +24,10 @@ body {
   z-index: 1000;
   height: 100vh;
   width: auto;
+  /* limit width so the pattern doesn’t overwhelm small screens */
+  max-width: 12vw;
+  /* ensure we always see some of the pattern even if viewport height is small */
+  min-width: 40px;
 }
 .left-border {
   left: 0;
@@ -32,9 +36,28 @@ body {
   right: 0;
 }
 
+/* make the nested image scale with the container */
+.side-crow-border img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* mirror right-hand pattern so it reads correctly */
+.right-border img {
+  transform: scaleX(-1);
+}
+
 @media (max-width: 900px) {
   .side-crow-border {
     display: none;
+  }
+}
+
+/* optional tighter constraint on very narrow screens */
+@media (max-width: 600px) {
+  .side-crow-border {
+    max-width: 20vw;
   }
 }
 /* BASE STYLES */

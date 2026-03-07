@@ -17,6 +17,26 @@ body {
   margin: 0;
   padding-bottom: 60px; /* Height of the footer */
 }
+
+.side-crow-border {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: auto;
+}
+.left-border {
+  left: 0;
+}
+.right-border {
+  right: 0;
+}
+
+@media (max-width: 900px) {
+  .side-crow-border {
+    display: none;
+  }
+}
 /* BASE STYLES */
 
 * {

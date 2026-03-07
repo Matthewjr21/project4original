@@ -1,5 +1,30 @@
 .titlecontainer .titleimage {
+  width: 100%;
+  height: auto;
   filter: brightness(65%);
+  display: block;
+  border-radius: 12px;
+}
+
+.responsive-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  pointer-events: none;
 }
 
 /* Layout */

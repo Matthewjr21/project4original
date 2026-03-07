@@ -16,13 +16,15 @@ body {
   min-height: 100vh;
   margin: 0;
   padding-bottom: 60px; /* Height of the footer */
+  background-color: #D8CFC5; /* slightly deeper tan for warmth */
 }
 
 .side-crow-border {
   position: fixed;
   top: 0;
+  bottom: 60px; /* leave space for the sticky footer */
   z-index: 1000;
-  height: 100vh;
+  /* use top & bottom rather than 100vh to respect footer height */
   width: auto;
   /* limit width so the pattern doesn’t overwhelm small screens */
   max-width: 12vw;
@@ -70,7 +72,7 @@ body {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #F4F1ED;
+  background-color: #D8CFC5;
   color: #222;
   line-height: 1.6;
 }
@@ -105,6 +107,7 @@ header {
 
 #headerLogo {
   height: 55px;
+  margin-left: -30px; /* moderate left shift */
 }
 
 #Nav-Links {
@@ -160,7 +163,7 @@ header {
 
 .titlecontainer {
   width: 100%;
-  height: 100vh;
+  height: 120vh; /* extend image further down so it meets the mission windows */
   position: relative;
   margin-top: 90px; /* offset fixed header */
 }
@@ -174,7 +177,7 @@ header {
 
 .title {
   position: absolute;
-  top: 48%;
+  top: 30%; /* raised above lower half of image */
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3.5rem;
@@ -201,6 +204,111 @@ header {
 .firstInfo p {
   font-size: 1.05rem;
   text-align: center;
+}
+
+/* special styling for intro sections on learn page */
+.firstInfo.learn-intro {
+  background: #fff;
+  border-left: 6px solid #8C5E3C;
+  border-radius: 8px;
+  padding: 60px 40px 30px; /* reduced bottom padding for tighter flow */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 0; /* eliminate extra gap below intro */
+}
+
+/* mission statement windows */
+.mission-windows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center the group */
+  gap: 0;                  /* remove space between windows */
+  width: 100vw;          /* full viewport width */
+  max-width: none;
+  margin: -300px auto 40px; /* raise further to account for taller image */
+  position: relative;
+  z-index: 10;          /* sit above background image */
+  padding: 0 20px;       /* slight horizontal padding */
+}
+.mission-window {
+  position: relative;    /* enable absolute children like quote-bubble */
+  flex: 1 1 400px;       /* larger basis */
+  min-height: 450px;     /* increased height to meet image */
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 40px;
+}
+.mission-window textarea {
+  width: 100%;
+  height: 400px;        /* increase textarea height */
+  border: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.mission-window textarea:focus {
+  outline: 2px solid #8C5E3C;
+}
+
+/* image window styling */
+.image-window {
+  padding: 0; /* remove padding to let image fill */
+}
+.image-window img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* quote bubble overlay on each window */
+.quote-bubble {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.3);
+  color: #2a2a2a;
+  padding: 12px 20px;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 70%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  z-index: 20;
+}
+
+/* little pointer triangle under bubble */
+.quote-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: rgba(255,255,255,0.3) transparent transparent transparent;
+}
+
+/* only the third window’s text should be white */
+.mission-windows .mission-window:nth-child(3) .quote-bubble {
+  color: #fff;
+}
+
+.firstInfo.learn-intro h1 {
+  font-size: 2.2rem;
+  color: #8C5E3C;
+}
+
+.firstInfo.learn-intro p {
+  font-style: italic;
+  color: #444;
 }
 
 /* IMAGE & TEXT */
@@ -350,4 +458,9 @@ footer {
 
   .title {
     font-size: 2.2rem;
+  }
+
+  /* ensure overlay title stays lifted above image middle */
+  .title.overlay-title {
+    top: 30% !important;
   }

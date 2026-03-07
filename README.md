@@ -17,3 +17,7 @@ https://project4backup.vercel.app
 
 03/05
 Added file upload function, added copyable code snippet to user guide
+
+Dev Log: 03/06
+Had to work around owner restrictions to keep public host(vercel) synced with github main project repo. Forked into 423S26/project4 to a personal repo as a work around this issue.
+New Link: https://project4original-zeta.vercel.app/

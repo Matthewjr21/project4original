@@ -4,9 +4,11 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background: #5C3A1B;
+  /* vertical brown gradient, lighter at top (flipped) */
+  background: linear-gradient(to top, #5C3A1B 0%, #8C5E3C 100%);
   color: #fff;
-  border-top: 1px solid #ccc;
+  /* remove white border to blend with bar */
+  border-top: none;
   text-align: center;
   padding: 10px 0;
   z-index: 100;
@@ -97,7 +99,8 @@ header {
   width: 100%;
   /* slimmer menu bar */
   height: 60px;
-  background-color: #5B3A29;
+  /* vertical brown gradient, lighter at bottom */
+  background: linear-gradient(to bottom, #5B3A29 0%, #8C5E3C 100%);
   display: flex;
   align-items: center;
   padding: 0 20px;

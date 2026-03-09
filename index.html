@@ -17,13 +17,19 @@
   <a href="index.html">
     <img src="images/hummingbird_logo.jpg" id="headerLogo" alt="Hummingbird Logo" style="height:55px; width:auto; object-fit:contain;">
   </a>
+  <button id="menu-toggle" aria-label="Menu">&#9776;</button>
   <ul id="Nav-Links">
     <li><a href="index.html">Home</a></li>
     <li><a href="html/learn.html">Learn</a></li>
     <li><a href="html/culture.html">History</a></li>
-      <li><a href="html/stories.html">Stories</a></li>
+    <li><a href="html/stories.html">Stories</a></li>
   </ul>
 </header>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('Nav-Links').classList.toggle('open');
+  });
+</script>
 
     <div class = "titlecontainer" id="indexcontainer">
   <img class="titleimage" id="indexTemp" src="images/vecteezy_serene-alpine-lake-reflecting-snow-capped-mountains-at_69765282.jpg" alt="Serene alpine lake reflecting snow-capped mountains"/>

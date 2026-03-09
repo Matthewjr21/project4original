@@ -95,23 +95,23 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 90px;
+  /* slimmer menu bar */
+  height: 60px;
   background-color: #5B3A29;
   display: flex;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 20px;
   z-index: 1000;
 }
 
 #headerLogo {
-  height: 55px;
-  margin-left: -30px; /* moderate left shift */
+  height: 40px;
+  margin-left: -20px; /* moderate left shift */
 }
 
 #Nav-Links {
   list-style: none;
   display: flex;
-  margin-left: auto;
   padding: 0;
 }
 
@@ -157,13 +157,54 @@ header {
   background-color: #8C5E3C;
 }
 
+/* hamburger menu button for collapsed navigation */
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* visible when JS enables or on small screens */
+  margin-left: auto; /* push to right edge */
+}
+
+/* mobile-style dropdown nav */
+#Nav-Links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+#Nav-Links.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #5B3A29;
+  border: 1px solid #8C5E3C;
+  border-radius: 4px;
+  padding: 10px;
+}
+#Nav-Links.open li {
+  margin: 8px 0;
+}
+
+@media (max-width: 900px) {
+  #menu-toggle {
+    display: block;
+  }
+  #Nav-Links {
+    display: none;
+    flex-direction: column;
+  }
+}
+
 /* TITLES */
 
 .titlecontainer {
   width: 100%;
   height: 120vh; /* extend image further down so it meets the mission windows */
   position: relative;
-  margin-top: 90px; /* offset fixed header */
+  margin-top: 60px; /* offset fixed header (now 60px tall) */
 }
 
 .titleimage {

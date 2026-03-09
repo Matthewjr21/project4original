@@ -51,6 +51,7 @@
       <a href="../index.html">
         <img src="../images/hummingbird_logo.jpg" id="headerLogo" alt="Hummingbird Logo" style="height:55px; width:auto; object-fit:contain;">
       </a>
+      <button id="menu-toggle" aria-label="Menu">&#9776;</button>
       <ul id="Nav-Links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="learn.html">Learn</a></li>
@@ -58,6 +59,11 @@
         <li><a href="stories.html">Stories</a></li>
       </ul>
     </header>
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('Nav-Links').classList.toggle('open');
+      });
+    </script>
 
     <div class="titlecontainer" id="historycontainer">
   <img class="titleimage" id="historyMountains" src="../images/tribal-teepee.jpg" alt="Tribal Teepee"/>

@@ -17,6 +17,7 @@
     <a href="../index.html">
         <img src="../images/hummingbird_logo.jpg" id="headerLogo" alt="Hummingbird Logo">
     </a>
+    <button id="menu-toggle" aria-label="Menu">&#9776;</button>
     <ul id="Nav-Links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="learn.html">Learn</a></li>
@@ -24,6 +25,11 @@
         <li><a href="stories.html">Stories</a></li>
     </ul>
 </header>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('Nav-Links').classList.toggle('open');
+  });
+</script>
 
 
 <div class="firstInfo outlined" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);">

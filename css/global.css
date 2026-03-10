@@ -106,6 +106,7 @@ header {
   -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
+  justify-content: space-between; /* logo left, toggle/nav right */
   padding: 0 20px;
   z-index: 1000;
 }
@@ -117,12 +118,12 @@ header {
 
 #Nav-Links {
   list-style: none;
-  display: flex;               /* show horizontally by default */
-  flex-direction: row;
+  display: none;               /* hidden until toggle clicked */
   padding: 0;
-  margin-left: auto;           /* push entire list to right edge */
-  text-align: right;          /* keep items right-aligned */
-  width: auto;                /* shrink to fit content */
+  /* layout when opened is controlled by .open rules */
+}
+#Nav-Links:not(.open) {
+  display: none; /* ensure it stays hidden when not open */
 }
 
 #Nav-Links li {
@@ -159,55 +160,54 @@ header {
   color: white;
   font-size: 28px;
   cursor: pointer;
-  display: none; /* hidden by default on desktop */
+  display: block; /* always visible */
   margin-left: auto; /* push to right edge when shown */
 }
-@media (max-width: 900px) {
-  #menu-toggle {
-    display: block; /* show hamburger on tablets and smaller */
-  }
-}
+/* no media query needed for toggle visibility */
 
 /* dropdown nav: hidden until hamburger clicked */
-/* collapsed navigation on narrow screens only */
+/* base dropdown styles apply at all widths */
+#Nav-Links {
+  list-style: none;
+  padding: 0;
+}
+#Nav-Links.open {
+  display: block !important;
+  position: absolute;
+  top: 60px;
+  right: 0;                    /* flush with right edge */
+  /* solid light grey for readability */
+  background: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 0;
+  width: auto;                 /* fit width to contents */
+  max-width: 100vw;            /* never go off screen */
+  z-index: 1001;               /* sit above other content */
+}
+/* each list item gets vertical padding so hover covers entire box */
+#Nav-Links.open li {
+  width: 100%;
+  padding: 8px 0;
+}
+#Nav-Links.open li a {
+  display: block;
+  width: 100%;
+  padding: 0 24px; /* horizontal padding only */
+  color: #000;
+}
+#Nav-Links.open li:hover {
+  background-color: #fff;
+}
+#Nav-Links.open li:hover a {
+  color: #8C5E3C; /* brown text on hover */
+}
+/* collapsed navigation initial state on narrow screens */
 @media (max-width: 900px) {
   #Nav-Links {
-    list-style: none;
     display: none;
-    padding: 0;
     flex-direction: column; /* vertical on mobile */
-  }
-  #Nav-Links.open {
-    display: block;
-    position: absolute;
-    top: 60px;
-    right: 0;                    /* flush with right edge */
-    /* solid light grey for readability */
-    background: #ddd;
-    color: #000;
-    border: none;
-    border-radius: 16px;
-    padding: 10px 0;
-    width: auto;                 /* fit width to contents */
-    max-width: 100vw;            /* never go off screen */
-    z-index: 1001;               /* sit above other content */
-  }
-  /* each list item gets vertical padding so hover covers entire box */
-  #Nav-Links.open li {
-    width: 100%;
-    padding: 8px 0;
-  }
-  #Nav-Links.open li a {
-    display: block;
-    width: 100%;
-    padding: 0 24px; /* horizontal padding only */
-    color: #000;
-  }
-  #Nav-Links.open li:hover {
-    background-color: #fff;
-  }
-  #Nav-Links.open li:hover a {
-    color: #8C5E3C; /* brown text on hover */
   }
 }
 
